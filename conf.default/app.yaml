@@ -1,0 +1,7 @@
+# Application settings
+
+# Flask debug server
+debugserver:
+    debug : True
+    host  : '0.0.0.0'
+    port  : 8098
