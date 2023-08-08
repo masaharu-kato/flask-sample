@@ -1,6 +1,9 @@
-import flask
+""" Main (page definitions) """
 
-app = flask.Flask(__name__)
+import flask
+import controls.sample
+
+app = flask.Flask(__name__)                 
 
 @app.route('/')
 def index():
@@ -9,5 +12,4 @@ def index():
 @app.route('/hello/<name>')
 def hello(name=None):
     #return name
-    q = flask.request.args.get('q')
-    return flask.render_template('hello.html', title='flask test', name=name, q=q) 
+    return flask.render_template('hello.html', title='flask test', greet=controls.sample.greet(name)) 
